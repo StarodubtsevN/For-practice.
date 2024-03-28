@@ -80,7 +80,8 @@ switch ($a){
  * если сумма трех первых цифр билета равна сумме трех последних цифр.
  * Требуется составить программу для определения билета, имеющего счастливый номер.*/
 
-print('Введите номер билета');
+print('Введите номер билета: ');
+/*заполнение массива*/
 $number = readline();;
 
 $numberToString = (string)$number;
@@ -91,12 +92,11 @@ for ($i = 0; $i < $lengthNumber; $i++) {
     $array[] = (int)$numberToString[$i];
 }
 
-/*$array = array( 1,2,3,4,5,6,7,8,9,10,11,12);*/
+$head_array = array_slice($array, 0, 3);//разбиение массива по трем первым элементам
+$end_array = array_slice($array, -3);//разбиение массива по трем последним элементам
 
-$head_array = array_slice($array, 0, 3);
-$end_array = array_slice($array, -3);
-print_r($head_array);
-print_r($end_array);
-print_r(array_sum($head_array));
-print_r(array_sum($end_array));
-
+if (array_sum($head_array) == array_sum($end_array)) {
+    print('Ваш билет счастливый');
+} else{
+    print('Ваш билет оказался несчастливым');
+}
