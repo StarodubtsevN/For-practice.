@@ -49,7 +49,7 @@ if($b != 0) {
 }
 return 0;*/
 
-/* Задача 1:
+/* Задача 4:
 Человек вводит в компьютер число.
 Если оно находится в интервале от 28 до 30, то нужно напечатать текст ПОПАЛ,
 если оно больше или равно 30 - то ПЕРЕЛЕТ,
@@ -57,7 +57,7 @@ return 0;*/
 если число меньше нуля - НЕ БЕЙ ПО СВОИМ
 */
 
-$a = readline();
+/*$a = readline();
 
 switch ($a){
     case $a >= 28 && $a < 30:
@@ -72,7 +72,31 @@ switch ($a){
     case $a < 0:
         print('НЕ БЕЙ ПО СВОИМ');
         break;
+}*/
+
+/*Задача 5:
+
+ * Автобусный билет считают счастливым,
+ * если сумма трех первых цифр билета равна сумме трех последних цифр.
+ * Требуется составить программу для определения билета, имеющего счастливый номер.*/
+
+print('Введите номер билета');
+$number = readline();;
+
+$numberToString = (string)$number;
+$lengthNumber = strlen($numberToString);
+
+$array = [];
+for ($i = 0; $i < $lengthNumber; $i++) {
+    $array[] = (int)$numberToString[$i];
 }
 
+/*$array = array( 1,2,3,4,5,6,7,8,9,10,11,12);*/
 
+$head_array = array_slice($array, 0, 3);
+$end_array = array_slice($array, -3);
+print_r($head_array);
+print_r($end_array);
+print_r(array_sum($head_array));
+print_r(array_sum($end_array));
 
