@@ -225,4 +225,22 @@ if(is_numeric($n)){
     print ('ERRORRR');
 }*/
 
+/*Задача 12*/
+/*
+Возвести число в степень с помощью цикла и операции умножения
+ */
+/*function MyPower( $k, $x)
+{
+     $res = 1.0;  //íà ñëó÷àé, åñëè k == 0
+    for ($i = 1; $i <=  $x; $i++)
+        $res *= $k;
+    return $res;
+}
+
+print_r('Введите число для возведения в степень: ');
+$count = readline();
+print_r('Введите степень: ');
+$grade = readline();
+
+print_r(MyPower( $count, $grade));*/
 
